@@ -85,7 +85,7 @@ To run the tests, run:
 npm run test
 ```
 
-### Thanks
+## Thanks
 
 This library is based on a great DID parsing implementation in Golang by [ockam-network](https://github.com/ockam-network/did).
 
