@@ -16,9 +16,9 @@ or
 ## Example
 
 ```js
-import * as didjs from 'didjs'
+import * as did from 'didjs'
 
-const d = didjs.parse('did:example:1234567890/asdf/qwerty')
+const d = did.parse('did:example:1234567890/asdf/qwerty')
 console.log(d)
 ```
 
@@ -38,7 +38,7 @@ The input string may also be a [DID Reference](https://w3c-ccg.github.io/did-spe
 [DID Fragment](https://w3c-ccg.github.io/did-spec/#dfn-did-fragment):
 
 ```js
-const d = didjs.parse("did:example:1234567890#keys-1")
+const d = did.parse("did:example:1234567890#keys-1")
 console.log(d.fragment)
 // Output: keys-1
 ```
@@ -50,7 +50,7 @@ const d = {
     method: 'example',
     id: '1234567890'
 }
-console.log(didjs.stringify(d))
+console.log(did.stringify(d))
 // Output: did:example:1234567890
 ```
 
@@ -62,7 +62,7 @@ const d = {
     id: '1234567890',
     fragment: 'keys-1'
 }
-console.log(didjs.stringify(d))
+console.log(did.stringify(d))
 // Output: did:example:1234567890#keys-1
 ```
 
@@ -84,6 +84,10 @@ To run the tests, run:
 ```
 npm run test
 ```
+
+### Thanks
+
+This library is based on a great DID parsing implementation in Golang by [ockam-network](https://github.com/ockam-network/did).
 
 ## License
 
