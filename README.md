@@ -22,7 +22,7 @@ const d = did.parse('did:example:1234567890/asdf/qwerty')
 console.log(d)
 ```
 
-The above example parses the input string according to the rules defined in the [DID Grammar](did.abnf) and prints the following object:
+The above example parses the input string according to the rules defined in the [DID Grammar](did.abnf) and prints the following:
 
 ```js
 {
