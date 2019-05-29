@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>didjs</title>
+<link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
+<script type="text/javascript" src="./dist/didjs.min.js"></script>
+</head>
+<body>
+<h1>did js</h1>
+<textarea id="textarea"></textarea>
+<button id="parse">parse</button>
+<pre contenteditable="true" id="message"></pre>
+<button id="stringify">stringify</button>
+<textarea id="finished"></textarea>
+<script>
+
+
+
+textarea.value = 'did:example:q7ckgxeq1lxmra0r/asdf/ghjk'
+stringify.style.display = 'none'
+finished.style.display = 'none'
+parse.addEventListener('click',function(){
+    try{  
+        const s = window.didjs.parse(textarea.value)
+        message.innerHTML = JSON.stringify(s,undefined,2)
+        console.log("=========>",s)
+        stringify.style.display = 'inline-block'
+    }catch(e){
+        console.log(e)
+    }
+})
+
+stringify.addEventListener('click',function(){
+    try{
+        const j = JSON.parse(message.innerHTML)
+        const i = window.didjs.stringify(j)
+        finished.value = i
+        finished.style.display = 'inline-block'
+        console.log(i)
+    }catch(e){
+        console.log(e)
+    }
+})
+
+
+</script>
+<style> 
+body{font-family:Helvetica;background:black;color:grey;}
+textarea{background:grey;color:white;height:20px;width:300px;font-size:14px;padding:5px 12px;} 
+button{background:grey;padding:8px 10px;vertical-align:top;cursor:pointer;width:65px;}
+p{word-break:break-all;}
+</style>
+
+</body>
+</html>
+
